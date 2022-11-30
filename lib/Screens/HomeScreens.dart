@@ -3,6 +3,7 @@ import 'package:shiv_sakti/Components/CircularButton.dart';
 import 'package:shiv_sakti/Components/SearchTextField.dart';
 import 'package:shiv_sakti/Model/Category.dart';
 import 'package:shiv_sakti/Screens/AddCategory.dart';
+import 'package:shiv_sakti/Screens/CompanyScreen.dart';
 
 import '../Components/CategoryItemLayout.dart';
 import '../Database Helper/DatabaseHelper.dart';
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                           Row(
                             children: const [
                               Text(
-                                "hchgc,",
+                                "Welcome,",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 22),
                               ),
@@ -165,7 +166,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                       color: Colors.transparent,
                                       child: InkWell(
                                         onTap: () {
-                                          print("object");
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CompanyScreen()));
                                         },
                                         child: CategoryItemLayout(
                                           title: categories[index].name,
